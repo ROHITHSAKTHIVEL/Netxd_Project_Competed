@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option go_package="https://github.com/ROHITHSAKTHIVEL/Netxd_Customer.git";
+
+package Netxd_customer;
+
+service CustomerService{
+    rpc CreateCustomer(Customer) returns (CustomerResponse);
+
+    }
+
+message Customer {
+    int32 CustomerId=1;
+    string FirstName=2;
+    string SecondName=3;
+    int32  BankId =4;
+    float Balance=5;
+    string CreatedAt=6;
+    string UpdatedAt=7;
+    bool IsActive=8;
+}
+
+message CustomerResponse {
+    int32 CustomerId =1;
+    string CreatedAt = 2;              
+}
